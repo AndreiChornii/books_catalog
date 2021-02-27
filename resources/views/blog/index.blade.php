@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Blogs') }}
+            {{ __('Books') }}
         </h2>
     </x-slot>
 
@@ -20,7 +20,7 @@
                                     <div class="flex items-center justify-begin mt-4">
 
                                         <x-button class="ml-3">
-                                            {{ __('update blog') }}
+                                            {{ __('update book') }}
                                         </x-button>
                                     </div>
                                 </form>
@@ -30,7 +30,7 @@
                                     <div class="flex items-center justify-begin mt-4">
 
                                         <x-button class="ml-3">
-                                            {{ __('delete blog') }}
+                                            {{ __('delete book') }}
                                         </x-button>
                                     </div>
                                 </form>

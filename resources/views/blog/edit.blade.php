@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Edit blog') }}
+            {{ __('Edit book') }}
         </h2>
     </x-slot>
     <form method="get" action="{{ route('blog.update', ['blog' => $blog->id]) }}">
@@ -16,7 +16,7 @@
         <div class="flex items-center justify-end mt-4">
 
             <x-button class="ml-3">
-                {{ __('Edit blog') }}
+                {{ __('Edit book') }}
             </x-button>
         </div>
     </form>

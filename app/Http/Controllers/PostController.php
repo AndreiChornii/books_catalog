@@ -43,7 +43,7 @@ class PostController extends Controller
     public function store(Request $request, Blog $blog)
     {
        $this->validate($request, [
-           'title' => 'required|string',
+           'title' => 'string',
            'content' => 'required|string'
        ]);
 
@@ -55,7 +55,8 @@ class PostController extends Controller
 //       );
 
         $post = new Post();
-        $post->title = $request->get('title');
+//        $post->title = $request->get('title');
+        $post->title = 'Annotation';
         $post->content = $request->get('content');
         $post->user_id = Auth::user()->id;
         $post->blog_id = $blog->id;
@@ -109,14 +110,15 @@ class PostController extends Controller
     {
 //        dd($request);
         $this->validate($request, [
-            'title' => 'required|string',
+            'title' => 'string',
             'content' => 'required|string'
         ]);
 
         $post = Post::find($request->get('id'));
 //        dd($post);
 //        dd($post->blog_id);
-        $post->title = $request->get('title');
+//        $post->title = $request->get('title');
+        $post->title = 'Annotation';
         $post->content = $request->get('content');
 //        $post->blog_id = $request->get('blog_id');
         $post->save();

@@ -21,7 +21,7 @@
                                     <div class="flex items-center justify-begin mt-4">
 
                                         <x-button class="ml-3">
-                                            {{ __('update post') }}
+                                            {{ __('update annotation') }}
                                         </x-button>
                                     </div>
                                 </form>
@@ -31,7 +31,7 @@
                                     <div class="flex items-center justify-begin mt-4">
 
                                         <x-button class="ml-3">
-                                            {{ __('delete post') }}
+                                            {{ __('delete annotation') }}
                                         </x-button>
                                     </div>
                                 </form>
@@ -44,7 +44,7 @@
                     <div class="flex items-center justify-begin mt-4">
 
                         <x-button class="ml-3">
-                            {{ __('Create post') }}
+                            {{ __('Create annotation') }}
                         </x-button>
                     </div>
                 </form>
