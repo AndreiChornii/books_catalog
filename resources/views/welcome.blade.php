@@ -33,11 +33,11 @@
                         </x-nav-link>
 
                         <x-nav-link :href="route('blogs.list')" :active="request()->routeIs('blogs.list')">
-                            {{ __('Blogs') }}
+                            {{ __('Books') }}
                         </x-nav-link>
 
                         <x-nav-link :href="route('blogs.create')" :active="request()->routeIs('blogs.create')">
-                            {{ __('Create blog') }}
+                            {{ __('Create book') }}
                         </x-nav-link>
                     </div>
                 </div>

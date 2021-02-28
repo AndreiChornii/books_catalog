@@ -5,7 +5,7 @@
                 {{ __('Create book') }}
             </h2>
         </x-slot>
-        <form method="POST" action="{{ route('blogs.store') }}">
+        <form method="POST" action="{{ route('blogs.store') }}" enctype="multipart/form-data">
             @csrf
             <div>
                 <x-label for="title" :value="__('Title')" />
@@ -24,8 +24,13 @@
 
                 <x-input id="genre" class="block mt-1 w-full" type="text" name="genre" required autofocus />
             </div>
+            
+            <!-- file -->
+            <div>
+                <x-label for="file" :value="__('Books_picture')" />
 
-            <div class="flex items-center justify-end mt-4">
+                <x-input id="file" class="block mt-1 w-full" type="file" name="file" required autofocus />
+            </div>
 
                 <x-button class="ml-3">
                     {{ __('Create book') }}

@@ -42,15 +42,35 @@ class BlogController extends Controller
         $this->validate($request, [
             'title' => 'required|string',
             'author' => 'required|string',
-            'genre' => 'required|string'
+            'genre' => 'required|string',
+            'file' => 'required|mimes:jpeg,jpg,png|max:4096'
+//            'file' => 'required|string'
         ]);
-
+        
+        $filename = time() . "." . $request->file('file')->getClientOriginalExtension();
+//        dd($filename);
+//        dd($request->file('file')->getClientOriginalExtension());
+//        dd($request->get('file'));
+        
+//        $filename = time() . "." . $request->file('file')->getClientOriginalExtension();
+        
+//        $request->file('file')->move(public_path('uploads'), $request->get('file'));
+        
+//        Photo::create([
+//            'url' => $filename
+//        ]);
+        
+//        dd($filename);
+        
         $blog = new Blog();
         $blog->name = $request->get('title');
         $blog->author = $request->get('author');
         $blog->genre = $request->get('genre');
+        $blog->photo = $filename;
         $blog->save();
-
+        
+        $request->file('file')->move(public_path('uploads'), $filename);
+//
         return (redirect(route('blogs.list')));
     }
 

@@ -5,19 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class Photo extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
-        'name',
-        'author',
-        'genre',
-        'photo'
+        'url'
     ];
-
-    public function  posts()
-    {
-        return $this->hasMany(Post::class);
-    }
 }

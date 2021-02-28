@@ -12,6 +12,9 @@
                     <ul class="list-disc">
                         @foreach($blogs as $blog)
                             <li>
+                                <div class="p-6 bg-white border-b border-gray-200">
+                                    <img width="128" height="128" src="/uploads/{{$blog->photo}}">
+                                </div>
                                 <div class="container">{{$blog->name}}</div>
                                 <div class="container">{{$blog->author}}</div>
                                 <div class="container">{{$blog->genre}}</div>
