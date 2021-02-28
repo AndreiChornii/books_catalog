@@ -13,6 +13,20 @@
             <input type="hidden" name="id" value="{{$blog->id}}">
         </div>
 
+        <div>
+            <x-label for="author" :value="__('Author')" />
+
+            <x-input id="author" class="block mt-1 w-full" type="text" name="author" :value="__($blog->author)" required autofocus />
+            <input type="hidden" name="id" value="{{$blog->id}}">
+        </div>
+
+        <div>
+            <x-label for="genre" :value="__('Genre')" />
+
+            <x-input id="genre" class="block mt-1 w-full" type="text" name="genre" :value="__($blog->genre)" required autofocus />
+            <input type="hidden" name="id" value="{{$blog->id}}">
+        </div>
+
         <div class="flex items-center justify-end mt-4">
 
             <x-button class="ml-3">

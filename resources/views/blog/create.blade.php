@@ -13,6 +13,18 @@
                 <x-input id="title" class="block mt-1 w-full" type="text" name="title" required autofocus />
             </div>
 
+            <div>
+                <x-label for="author" :value="__('Author')" />
+
+                <x-input id="author" class="block mt-1 w-full" type="text" name="author" required autofocus />
+            </div>
+
+            <div>
+                <x-label for="genre" :value="__('Genre')" />
+
+                <x-input id="genre" class="block mt-1 w-full" type="text" name="genre" required autofocus />
+            </div>
+
             <div class="flex items-center justify-end mt-4">
 
                 <x-button class="ml-3">

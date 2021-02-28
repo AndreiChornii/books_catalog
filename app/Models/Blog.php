@@ -10,7 +10,9 @@ class Blog extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name'
+        'name',
+        'author',
+        'genre'
     ];
 
     public function  posts()

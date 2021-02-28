@@ -40,11 +40,15 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|string'
+            'title' => 'required|string',
+            'author' => 'required|string',
+            'genre' => 'required|string'
         ]);
 
         $blog = new Blog();
         $blog->name = $request->get('title');
+        $blog->author = $request->get('author');
+        $blog->genre = $request->get('genre');
         $blog->save();
 
         return (redirect(route('blogs.list')));
@@ -72,6 +76,7 @@ class BlogController extends Controller
     {
 //        dd($request->get('id'));
 //        dd($request->get('name'));
+//        dd($request->get('author'));
 //        $id = $request->get('id');
 //        $name = $request->get('name');
 //        $blog = compact('id', 'name');
@@ -81,6 +86,8 @@ class BlogController extends Controller
         $blog_send = new Blog();
         $blog_send->id = $request->get('id');
         $blog_send->name = $request->get('name');
+        $blog_send->author = $request->get('author');
+        $blog_send->genre = $request->get('genre');
 //        dd($blog_send);
         return view('blog.edit', ['blog' => $blog_send]);
     }
@@ -95,7 +102,9 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         $this->validate($request, [
-            'title' => 'required|string'
+            'title' => 'required|string',
+            'author' => 'required|string',
+            'genre' => 'required|string'
         ]);
 
 //        dd($request->get('title'));
@@ -108,6 +117,8 @@ class BlogController extends Controller
 
         $blog = Blog::find($request->get('id'));
         $blog->name = $request->get('title');
+        $blog->author = $request->get('author');
+        $blog->genre = $request->get('genre');
         $blog->save();
 //        $this->validate($request, [
 //            'title' => 'required|string'
